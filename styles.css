@@ -1,0 +1,114 @@
+/* Modular Task Manager 0159
+   Responsive, clean layout using Flexbox */
+
+:root {
+  --primary: #0033a0; /* USIU Blue */
+  --accent: #ffcc00;  /* USIU Yellow */
+  --background: #f8f9fa;
+  --text: #222;
+  --muted: #666;
+}
+
+body {
+  font-family: "Segoe UI", sans-serif;
+  background-color: var(--background);
+  color: var(--text);
+  margin: 0;
+  padding: 1rem;
+}
+
+header {
+  text-align: center;
+  color: var(--primary);
+}
+
+.task-input {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  justify-content: center;
+  margin-top: 1rem;
+}
+
+.task-input input {
+  flex: 1;
+  padding: 0.5rem;
+  border: 2px solid var(--primary);
+  border-radius: 8px;
+}
+
+.task-input button {
+  background: var(--accent);
+  border: none;
+  padding: 0.6rem 1rem;
+  border-radius: 8px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.task-input button:hover {
+  background: var(--primary);
+  color: white;
+}
+
+.filters {
+  text-align: center;
+  margin: 1rem 0;
+}
+
+.filters button {
+  margin: 0 0.5rem;
+  padding: 0.5rem 1rem;
+  border-radius: 6px;
+  border: 1px solid var(--primary);
+  background-color: white;
+  cursor: pointer;
+}
+
+.filters button.active {
+  background: var(--primary);
+  color: white;
+}
+
+.tasks {
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.task {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: white;
+  border: 1px solid var(--muted);
+  padding: 0.5rem 1rem;
+  border-radius: 10px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+}
+
+.task.done {
+  text-decoration: line-through;
+  color: var(--muted);
+}
+
+.task button {
+  background: var(--accent);
+  border: none;
+  border-radius: 6px;
+  padding: 0.4rem 0.6rem;
+  cursor: pointer;
+}
+
+.task button:hover {
+  background: var(--primary);
+  color: white;
+}
+
+@media (max-width: 480px) {
+  .task-input {
+    flex-direction: column;
+  }
+}
